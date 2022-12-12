@@ -26,16 +26,57 @@ constructor(){
 ngOnit():void{
 
 }
-login(){
-  alert('login clicked')
+//login(){
+
+    //var acno=this.acno
+    //var psw= this.psw
+    //var userDetails=this.userDetails
+
+    //if(acno in userDetails){
+     //if(psw==userDetails[acno]["password"]){
+      //alert('login success')
+    //}
+    //else{
+      //alert('incorrect password')
+    //}
+  //}
+  //else{
+    //alert('incorrect username')
+  //}
+
+
+  //alert('login clicked')
+//}
+
+login(a:any,b:any){
+  this.acno=a.value
+  this.psw=b.value
+
+  var acno=this.acno
+  var psw= this.psw
+  var userDetails=this.userDetails
+
+  if(acno in userDetails){
+   if(psw==userDetails[acno]["password"]){
+    alert('login success')
+  }
+  else{
+    alert('incorrect password')
+  }
 }
-acnoChange(event:any){
- this.acno=event.target.value
+else{
+  alert('incorrect username')
 }
-pswChange(event:any){
-  this.psw=event.target.value
-  console.log(this.psw);
+//alert('login clicked')
+}
+
+//acnoChange(event:any){
+ //this.acno=event.target.value
+//}
+//pswChange(event:any){
+  //this.psw=event.target.value
+  //console.log(this.psw);
   
-}
+//}
 
 }
