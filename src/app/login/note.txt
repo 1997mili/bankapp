@@ -1,0 +1,15 @@
+Data binding in Angular
+...................
+ts-component
+html-view
+1.One Way Binding
+1.1Component to view
+           1.1.1 String Interpolation
+                     {{}}
+       1.1.2 Property binding
+               [property]="value"
+1.2.View to component
+         1.2.1 Event Binding
+          (eventname)="method name()"
+        1.2.2 Event Binding using $event
+               (eventname)="methodname($event)"               

@@ -1,0 +1,20 @@
+<div class="text-white ms-2 p-3">
+    <h2>{{aim}}</h2>
+</div>
+<form>
+    <div class="mt-5 container border border-white w-50 bg-dark text-white">
+        <h1 class="text-center">Login Form</h1>
+    
+        <div class="mt-2 p-2">
+            <input name="acno" (change)="acnoChange($event)" class="form-control" id="acid" type="text" [placeholder]="data">
+        </div>
+        
+        <div class="mt-2 p-2">
+            <input name="psw" (change)="pswChange($event)" class="form-control" id="pid" type="text" placeholder="enter password">
+        </div>
+        <div class="mt-2 p-2 text-center">
+            <button type="submit" (click)="login()"  class="btn btn-outline-light">Login</button><br>
+            <a href="">New User? Register</a>
+        </div>
+</div>
+</form>
