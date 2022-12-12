@@ -14,4 +14,7 @@ html-view
         1.2.2 Event Binding using $event
                (eventname)="methodname($event)"     
         1.2.3 Event Binding using template rendering variable
-                   #variable                 
+                   #variable         
+2.Two way Binding
+   2.1  ngmodel
+      [(ngmodel)]="value"                           

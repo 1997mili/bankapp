@@ -26,49 +26,49 @@ constructor(){
 ngOnit():void{
 
 }
-//login(){
+login(){
 
-    //var acno=this.acno
-    //var psw= this.psw
-    //var userDetails=this.userDetails
+    var acno=this.acno
+    var psw= this.psw
+    var userDetails=this.userDetails
 
-    //if(acno in userDetails){
-     //if(psw==userDetails[acno]["password"]){
-      //alert('login success')
-    //}
-    //else{
-      //alert('incorrect password')
-    //}
-  //}
-  //else{
-    //alert('incorrect username')
-  //}
+    if(acno in userDetails){
+     if(psw==userDetails[acno]["password"]){
+      alert('login success')
+    }
+    else{
+      alert('incorrect password')
+    }
+  }
+  else{
+    alert('incorrect username')
+  }
 
 
   //alert('login clicked')
+}
+
+//login(a:any,b:any){
+  //this.acno=a.value
+  //this.psw=b.value
+
+  //var acno=this.acno
+  //var psw= this.psw
+  //var userDetails=this.userDetails
+
+  //if(acno in userDetails){
+   //if(psw==userDetails[acno]["password"]){
+    //alert('login success')
+  //}
+  //else{
+    //alert('incorrect password')
+  //}
 //}
-
-login(a:any,b:any){
-  this.acno=a.value
-  this.psw=b.value
-
-  var acno=this.acno
-  var psw= this.psw
-  var userDetails=this.userDetails
-
-  if(acno in userDetails){
-   if(psw==userDetails[acno]["password"]){
-    alert('login success')
-  }
-  else{
-    alert('incorrect password')
-  }
-}
-else{
-  alert('incorrect username')
-}
+//else{
+  //alert('incorrect username')
+//}
 //alert('login clicked')
-}
+//}
 
 //acnoChange(event:any){
  //this.acno=event.target.value
