@@ -17,4 +17,9 @@ html-view
                    #variable         
 2.Two way Binding
    2.1  ngmodel
-      [(ngmodel)]="value"                           
+      [(ngmodel)]="value"  
+    Redirection in Angular
+    .........................
+    navigateByUrl-method used for Redirection
+    Router      -class
+                               
