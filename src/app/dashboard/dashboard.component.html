@@ -1,1 +1,49 @@
-<p>dashboard works!</p>
+
+<form (ngSubmit)="deposit()">
+    <div class="mt-5 container border border-white w-50 bg-dark text-white">
+        <h1 class="text-center">Deposit</h1>
+    
+        <div class="mt-2 p-2">
+            <input name="acno"  [(ngModel)]="acno"  class="form-control" id="acid" type="text" placeholder="Enter acno">
+        </div>
+        
+        <div class="mt-2 p-2">
+            <input name="psw" [(ngModel)]="psw"  class="form-control" id="pid" type="text" placeholder="enter password">
+        </div>
+
+        <div class="mt-2 p-2">
+            <input name="amount"  [(ngModel)]="amnt" class="form-control" id="aid" type="text" placeholder="enter amount">
+        </div>
+        
+        <div class="mt-2 p-2 text-center">
+            <button type="submit"   class="btn btn-outline-light">Deposit</button>
+           
+        </div>
+</div>
+</form>
+
+<form (ngSubmit)="withdraw()">
+
+<div class="mt-5 container border border-white w-50 bg-dark text-white">
+    <h1 class="text-center">Withdraw</h1>
+
+    <div class="mt-2 p-2">
+        <input name="acno1"  class="form-control" id="acid1" type="text" placeholder="Enter acno">
+    </div>
+    
+    <div class="mt-2 p-2">
+        <input name="psw1"  class="form-control" id="pid1" type="text" placeholder="enter password">
+    </div>
+
+    <div class="mt-2 p-2">
+        <input name="amount1"  class="form-control" id="aid1" type="text" placeholder="enter amount">
+    </div>
+    
+    <div class="mt-2 p-2 text-center">
+        <button type="submit"   class="btn btn-outline-light">Withdraw</button>
+       
+    </div>
+</div>
+
+           
+</form>

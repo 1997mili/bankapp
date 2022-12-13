@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataService } from '../Services/data.service';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +22,7 @@ userDetails:any={
 }
 
 
-constructor(private router:Router){
+constructor(private router:Router,private ds:DataService){
 
 }
 ngOnit():void{
@@ -31,20 +32,16 @@ login(){
 
     var acno=this.acno
     var psw= this.psw
-    var userDetails=this.userDetails
-
-    if(acno in userDetails){
-     if(psw==userDetails[acno]["password"]){
+    
+    const result= this.ds.login(acno,psw)
+    if(result){
       alert('login success')
       this.router.navigateByUrl('dashboard')
     }
     else{
-      alert('incorrect password')
+      alert('incorrect username or password')
     }
-  }
-  else{
-    alert('incorrect username')
-  }
+    }
 
 
   //alert('login clicked')
@@ -81,4 +78,4 @@ login(){
   
 //}
 
-}
+
