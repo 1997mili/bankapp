@@ -34,5 +34,13 @@ html-view
     Angular Services
     ................
     ng g s servicename
-                                       
+
+    Angular Directives
+    ..................
+     1. Structural Directives
+     To handle structured data in view of a component
+     -ngFor -can directly apply in html to access element from array
+     
+
+
                                
