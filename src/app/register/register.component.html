@@ -1,23 +1,21 @@
-<div class="text-white ms-2 p-3">
-    <h2>Registration Form</h2>
-</div>
-<form>
+
+<form (ngSubmit)="register()" [formGroup]="registerForm"  >
     <div class="mt-5 container border border-white w-50 bg-dark text-white">
-        <h1 class="text-center">Login Form</h1>
+        <h1 class="text-center">Registration Page</h1>
     
         <div class="mt-2 p-2">
-            <input name="uname"  [(ngModel)]="uname"  class="form-control" id="uid" type="text" placeholder="Enter Username">
+            <input name="uname"  formControlName="uname"   class="form-control" id="uid" type="text" placeholder="Enter Username">
         </div>
         
         <div class="mt-2 p-2">
-            <input name="acno" [(ngModel)]="acno"  class="form-control" id="uid" type="text" placeholder="Enter acno">
+            <input name="acno" formControlName="acno"   class="form-control" id="uid" type="text" placeholder="Enter acno">
         </div>
 
            <div class="mt-2 p-2">
-            <input name="psw" [(ngModel)]="psw"  class="form-control" id="pid" type="text" placeholder="enter password">
+            <input name="psw" formControlName="psw"   class="form-control" id="pid" type="text" placeholder="enter password">
         </div>
         <div class="mt-2 p-2 text-center">
-            <button type="submit" (click)="register()"  class="btn btn-outline-light">Sign Up</button><br>
+            <button type="submit"   class="btn btn-outline-light">Sign Up</button><br><br>
            
         </div>
 </div>

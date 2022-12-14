@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../Services/data.service';
 
@@ -11,8 +12,8 @@ export class LoginComponent {
 
   aim="Your Perfect Banking Partner"
   data="enter ac no"
-  acno=''
-  psw=''
+  // acno=''
+  // psw=''
 
 userDetails:any={
   1000:{acno:1000,username:"anu",password:123},
@@ -22,16 +23,15 @@ userDetails:any={
 }
 
 
-constructor(private router:Router,private ds:DataService){
-
-}
+constructor(private router:Router,private ds:DataService,private fb:FormBuilder){}
+loginForm=this.fb.group({acno:[''],psw:['']})
 ngOnit():void{
 
 }
 login(){
 
-    var acno=this.acno
-    var psw= this.psw
+    var acno=this.loginForm.value.acno
+    var psw= this.loginForm.value.psw
     
     const result= this.ds.login(acno,psw)
     if(result){

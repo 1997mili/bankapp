@@ -40,6 +40,19 @@ html-view
      1. Structural Directives
      To handle structured data in view of a component
      -ngFor -can directly apply in html to access element from array
+
+     Form Validation In Angular
+     ..........................
+     form creation 2 ways-
+     1.Template driven Form
+     2.Model driven form
+     ....................
+     -Reactive Form
+     ...............
+     ReactiveFormsModule-Module used to create modal forms
+     FormBuilder        - class of ReactiveFormsModule
+                        -group,model,control
+                        
      
 
 
