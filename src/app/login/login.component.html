@@ -1,20 +1,28 @@
 <div class="text-white ms-2 p-3">
     <h2>{{aim}}</h2>
 </div>
-<form ngSubmi>
+<form (ngSubmit)="login()" [formGroup]="loginForm" >
     <div class="mt-5 container border border-white w-50 bg-dark text-white">
         <h1 class="text-center">Login Form</h1>
     
         <div class="mt-2 p-2">
             <input name="acno" formControlName="acno" class="form-control" id="acid" type="text" [placeholder]="data">
         </div>
+        <div *ngIf="this.loginForm.get('acno')?.errors&& this.loginForm.get('acno')?.touched">
+            <p class="text-danger">invalid account number</p>
+
+        </div>
         
         <div class="mt-2 p-2">
             <input name="psw" formControlName="psw" class="form-control" id="pid" type="text" placeholder="enter password">
         </div>
+        <div *ngIf="this.loginForm.get('psw')?.errors&& this.loginForm.get('psw')?.touched">
+            <p class="text-danger">invalid password</p>
+
+        </div>
         <div class="mt-2 p-2 text-center">
-            <button type="submit"   class="btn btn-outline-light">Login</button><br>
-           <p class="text-blue">New User? <a routerLink="register">register</a> </p>
+            <button type="submit"   class="btn btn-outline-light">Login</button><br><br>
+          
         </div>
 </div>
 </form>

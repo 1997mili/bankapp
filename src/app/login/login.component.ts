@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../Services/data.service';
 
@@ -24,7 +24,8 @@ userDetails:any={
 
 
 constructor(private router:Router,private ds:DataService,private fb:FormBuilder){}
-loginForm=this.fb.group({acno:[''],psw:['']})
+loginForm=this.fb.group({acno:['',[Validators.required,Validators.pattern('[0-9]+')]],
+          psw:['',[Validators.required,Validators.pattern('[0-9]+')]]  })
 ngOnit():void{
 
 }
@@ -32,16 +33,24 @@ login(){
 
     var acno=this.loginForm.value.acno
     var psw= this.loginForm.value.psw
+
+    if(this.loginForm.valid){
+      const result= this.ds.login(acno,psw)
+      if(result){
+        alert('login success')
+        this.router.navigateByUrl('dashboard')
+      }
+      else{
+        alert('incorrect username or password')
+      }
+      }
+      else{
+        alert('invalid form')
+      }
+
+    }
     
-    const result= this.ds.login(acno,psw)
-    if(result){
-      alert('login success')
-      this.router.navigateByUrl('dashboard')
-    }
-    else{
-      alert('incorrect username or password')
-    }
-    }
+   
 
 
   //alert('login clicked')

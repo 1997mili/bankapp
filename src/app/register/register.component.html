@@ -6,13 +6,25 @@
         <div class="mt-2 p-2">
             <input name="uname"  formControlName="uname"   class="form-control" id="uid" type="text" placeholder="Enter Username">
         </div>
+        <div *ngIf="this.registerForm.get('uname')?.errors&& this.registerForm.get('uname')?.touched">
+            <p class="text-danger">incorrect username</p>
+
+        </div>
         
         <div class="mt-2 p-2">
             <input name="acno" formControlName="acno"   class="form-control" id="uid" type="text" placeholder="Enter acno">
         </div>
+        <div *ngIf="this.registerForm.get('acno')?.errors&& this.registerForm.get('acno')?.touched">
+            <p class="text-danger">incorrect username</p>
+
+        </div>
 
            <div class="mt-2 p-2">
             <input name="psw" formControlName="psw"   class="form-control" id="pid" type="text" placeholder="enter password">
+        </div>
+        <div *ngIf="this.registerForm.get('psw')?.errors&& this.registerForm.get('psw')?.touched">
+            <p class="text-danger">incorrect username</p>
+
         </div>
         <div class="mt-2 p-2 text-center">
             <button type="submit"   class="btn btn-outline-light">Sign Up</button><br><br>

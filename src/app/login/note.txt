@@ -39,7 +39,8 @@ html-view
     ..................
      1. Structural Directives
      To handle structured data in view of a component
-     -ngFor -can directly apply in html to access element from array
+     -*ngFor -can directly apply in html to access element from array-For statement
+     -*ngIf-If statement
 
      Form Validation In Angular
      ..........................
@@ -52,7 +53,13 @@ html-view
      ReactiveFormsModule-Module used to create modal forms
      FormBuilder        - class of ReactiveFormsModule
                         -group,model,control
-                        
+Validate Model Form
+ .......................
+validator-a class in angular it includes methods for apply Validation
+-access errors in validator rule
+ this.registration.get('uname')?.error
+                  -valid -empty response
+                  -invalid-content
      
 
 
