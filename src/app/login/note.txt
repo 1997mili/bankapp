@@ -41,6 +41,9 @@ html-view
      To handle structured data in view of a component
      -*ngFor -can directly apply in html to access element from array-For statement
      -*ngIf-If statement
+     2.Component Directives
+     3.Attribute Directive - to add Directives to DOM
+
 
      Form Validation In Angular
      ..........................
@@ -61,6 +64,19 @@ validator-a class in angular it includes methods for apply Validation
                   -valid -empty response
                   -invalid-content
      
+Local Storage in Angular
+......................
+-store  localStorage.SetItem()
+-access  localStorage.getItem()
+-deleate   localStorage.removeItem()
 
+Parent Child Components communication in Angular
+...............................................
+
+
+Date  in Angular
+........................
+Date     - class
+- create an object of class Date to access Date and Time
 
                                

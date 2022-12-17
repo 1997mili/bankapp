@@ -1,6 +1,17 @@
 <h1 class="text-white p-4 ms-3">Welcome {{user}}</h1>
+<h4 class="text-white p-4 ms-3">{{dateandtime | date:'short'}}</h4>
+<div>
 <a style="background-color:lightsteelblue; border-radius: 25px; " class="p-4 ms-3 border border-radius white" routerLink="/transaction">View transaction history</a>
-<form (ngSubmit)="deposit()" [formGroup]="depositForm" >
+</div>
+<div class="text-end p-3">
+    <button (click)="logout()" class="btn btn-info">logout</button>
+</div>
+<div class="text-end p-3">
+    <button (click)="deleteconfirm()" class="btn btn-success">delete</button>
+</div>
+<app-deleteconfirm [item]="acno"></app-deleteconfirm>
+
+<form [ngClass]="acno?'style':''" (ngSubmit)="deposit()" [formGroup]="depositForm" >
     <div class="mt-5 container border border-white w-50 bg-dark text-white">
         <h1 class="text-center">Deposit</h1>
     
@@ -23,7 +34,7 @@
 </div>
 </form>
 
-<form (ngSubmit)="withdraw()"[formGroup]="withdrawForm">
+<form [ngClass]="acno?'style':''" (ngSubmit)="withdraw()"[formGroup]="withdrawForm">
 
 <div class="mt-5 container border border-white w-50 bg-dark text-white">
     <h1 class="text-center">Withdraw</h1>

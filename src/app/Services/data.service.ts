@@ -4,18 +4,43 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DataService {
+   
+  userDetails:any
+  currentuser:any
+  currentacno:any
 
-  currentuser=''
-  currentacno=''
+  constructor() {
+    this.getdetails()
+   }
 
-  constructor() { }
-
-  userDetails:any={
-    1000:{acno:1000,username:"anu",password:123,balance:0,transaction:[]},
-    1001:{acno:1001,username:"amal",password:123,balance:0,transaction:[]},
-    1002:{acno:1002,username:"arun",password:123,balance:0,transaction:[]},
-    1003:{acno:1003,username:"megha",password:123,balance:0,transaction:[]}
+  savedetails(){
+    if(this.userDetails){
+      localStorage.setItem("database",JSON.stringify(this.userDetails))
+    }
+    if(this.currentuser){
+      localStorage.setItem("currentuser",JSON.stringify(this.currentuser))
+    }
+    if(this.currentacno){
+      localStorage.setItem("currentacno",JSON.stringify(this.currentacno))
+    }
   }
+  getdetails(){
+    if(localStorage.getItem('database')){
+      this.userDetails=JSON.parse(localStorage.getItem('database') || '')
+    }
+     if(localStorage.getItem('currentuser')){
+       this.currentuser=JSON.parse(localStorage.getItem('currentuser') || '')
+     }
+    if(localStorage.getItem('currentacno')){
+       this.currentacno=JSON.parse(localStorage.getItem('currentacno') || '')
+     }
+  }
+
+
+
+
+
+ 
 
   register(acno:any,uname:any,psw:any){
          var userDetails=this.userDetails
@@ -24,12 +49,20 @@ export class DataService {
          }
          else{
           userDetails[acno]={acno,username:uname,password:psw,balance:0,transaction:[]}
+          console.log(userDetails);
+          this.savedetails
           return true
-         }
+        }
   }
   login(acno:any,psw:any){
+    this.getdetails()
 
-    
+  //     this.userDetails={
+  //    1000:{acno:1000,username:"anu",password:123,balance:0,transaction:[]},
+  //    1001:{acno:1001,username:"amal",password:123,balance:0,transaction:[]},
+  //    1002:{acno:1002,username:"arun",password:123,balance:0,transaction:[]},
+  //    1003:{acno:1003,username:"megha",password:123,balance:0,transaction:[]}
+  //  }
     var userDetails=this.userDetails
 
     if(acno in userDetails){
@@ -38,6 +71,7 @@ export class DataService {
 this.currentacno=acno
       //store username
       this.currentuser=this.userDetails[acno]["username"]
+      this.savedetails()
       return true
     }
     else{
@@ -56,6 +90,7 @@ deposit(acno:any,password:any,amount:any){
     if(password==userDetails[acno]["password"]){
       userDetails[acno]["balance"]+=amnt
       userDetails[acno]['transaction'].push({type:'CREDIT',amount:amnt})
+      this.savedetails()
       return userDetails[acno]["balance"]
     }
     else{
@@ -74,6 +109,7 @@ deposit(acno:any,password:any,amount:any){
       if(amnt<=userDetails[acno]["balance"]){
       userDetails[acno]["balance"]-=amnt
       userDetails[acno]["transaction"].push({type:'DEBIT',amount:amnt})
+      this.savedetails()
       return userDetails[acno]["balance"]
     }
     else{

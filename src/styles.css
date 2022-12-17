@@ -3,3 +3,6 @@ body{
     background-color: black;
     background-size: cover;
 }
+.style{
+    opacity: 0;
+}
