@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-deleteconfirm',
@@ -7,7 +7,11 @@ import { Component, Input } from '@angular/core';
 })
 export class DeleteconfirmComponent {
 
- @Input()item:String|undefined
+ @Input() item:String|undefined
+    // event creation
+ // EventEmitter()
+@Output() onCancel=new EventEmitter()
+
 
 
 
@@ -15,5 +19,8 @@ export class DeleteconfirmComponent {
  constructor(){}
  ngOnInit():void{
   
+ }
+ cancel(){
+this.onCancel.emit()
  }
 }

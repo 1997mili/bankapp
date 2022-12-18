@@ -72,11 +72,15 @@ Local Storage in Angular
 
 Parent Child Components communication in Angular
 ...............................................
+@input-parent to child data sharing
+@output-child to parent data sharing
+datas shard can be given only at selectors
 
 
 Date  in Angular
 ........................
 Date     - class
 - create an object of class Date to access Date and Time
+eg-date pipe
 
                                

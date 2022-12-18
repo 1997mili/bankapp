@@ -27,7 +27,7 @@ export class DashboardComponent {
 
   constructor(private ds:DataService,private fb:FormBuilder,private router:Router){
     this.dateandtime=new Date()
-    
+
 // access username
     this.user=this.ds.currentuser
   }
@@ -82,6 +82,9 @@ this.router.navigateByUrl('')
 
 deleteconfirm(){
 this.acno=JSON.parse(localStorage.getItem('currentacno') || "")
+}
+oncancel(){
+  this.acno=""
 }
 
 }

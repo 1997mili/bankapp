@@ -9,7 +9,7 @@
 <div class="text-end p-3">
     <button (click)="deleteconfirm()" class="btn btn-success">delete</button>
 </div>
-<app-deleteconfirm [item]="acno"></app-deleteconfirm>
+<app-deleteconfirm (onCancel)="oncancel()"  [item]="acno"></app-deleteconfirm>
 
 <form [ngClass]="acno?'style':''" (ngSubmit)="deposit()" [formGroup]="depositForm" >
     <div class="mt-5 container border border-white w-50 bg-dark text-white">
